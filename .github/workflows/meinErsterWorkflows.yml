@@ -1,11 +1,24 @@
 name: Ralf's_Workflow
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
-  meinErsterJob:
+  changed-job:
     runs-on: ubuntu-latest
     steps:
       - name: meinErsterstep
         run: echo "Hallo Welt"
-   
+      - name: Abschied
+        run: echo "Bye Bye!"
+
+  zweiter-job:
+    needs: changed-job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Datum anzeigen
+        run: date
+
