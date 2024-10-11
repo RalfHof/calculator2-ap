@@ -6,6 +6,6 @@ jobs:
   meinErsterJob:
     run-on: ubuntu-latest
     steps:
-    - name: meinErsterstep
-      run: echo "Hallo Welt"
+      - name: meinErsterstep
+        run: echo "Hallo Welt"
    
